@@ -37,11 +37,19 @@ def reverse_words(str):
             self.top = self.top.below
             return temp
 
-    train = Stack()
-    ret_word = ""
+    def reverse_one(word):
+        """Reverse a single word."""
+        the_stack = Stack()
+        the_word = ""
+        for i in word:
+            the_stack.push(i)
+        while the_stack.top:
+            the_word += the_stack.pop()
+        return the_word
 
-    for i in str:
-        train.push(i)
-
-    while train.top:
-        ret_word += train.pop()
+    the_split = str.split(" ")
+    return_word = ""
+    for i in the_split:
+        return_word += reverse_one(i)
+        return_word += " "
+    return return_word[: -1]
