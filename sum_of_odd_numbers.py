@@ -19,17 +19,17 @@ def row_sum_odd_numbers(n):
     if n == 1:
         return n
 
-    row_number = 1
-    value = 1
+    row_number = 2 
+    value = 3
 
     while row_number < n:
-        for x in row_number:
+        for x in range(row_number):
             value += 2
         row_number += 1
 
     ret_value = 0
 
-    for x in row_number:
+    for x in range(row_number):
         ret_value += value
         value += 2
 
